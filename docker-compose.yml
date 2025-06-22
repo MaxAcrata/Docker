@@ -1,0 +1,25 @@
+services:
+  postgres:
+    # Используем облегченный образ PostgreSQL на базе Alpine Linux
+    image: postgres:13-alpine
+
+    # Пробрасываем порты:
+    # - 5432 на хосте → 5432 в контейнере (стандартный порт PostgreSQL)
+    ports:
+      - '5432:5432'
+
+    # Монтируем volume для хранения данных:
+    # - Папка ./data на хосте → /var/lib/postgresql/data в контейнере
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+    # Переменные окружения для настройки PostgreSQL
+    environment:
+      # Имя базы данных, создаваемой при старте
+      - POSTGRES_DB=db
+
+      # Имя пользователя с правами суперпользователя
+      - POSTGRES_USER=user
+
+      # Пароль для указанного пользователя
+      - POSTGRES_PASSWORD=9mREsvXDs9Gk89Ef

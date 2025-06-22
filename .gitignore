@@ -1,9 +1,10 @@
-# Игнорировать всё по умолчанию
-*
+# Игнорировать всё
+/*
+/*/
 
-# Файлы, которые НЕ нужно игнорировать
+# Явно разрешить нужные файлы
 !.gitignore
+!README.md
 !db-api.jar
 !application.properties
 !docker-compose.yml
-!README.md  
